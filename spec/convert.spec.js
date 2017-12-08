@@ -5,10 +5,12 @@ describe('Test des parametres de la fonction', function() {
     });
     
     it('les 3 parametres doivent etre du bon type', function() {
+		expect(convertisseur('USD', null, 'KRW')).toBe(null);
+		expect(convertisseur(null, 2, 'KRW')).toBe(null);
+		expect(convertisseur('USD', 2, null)).toBe(null);
 		expect(convertisseur(2, 2, 'EUR')).toBe(null);
 		expect(convertisseur('USD', 2, 2)).toBe(null);
-		expect(convertisseur('USD', null, 'KRW')).toBe(null);
-		expect(convertisseur(2, 2, 2)).toBe(null);
+		expect(convertisseur('USD', 'EUR', 'NZD')).toBe(null);
     });
 
 });
